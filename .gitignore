@@ -90,6 +90,9 @@ venv.bak/
 # mypy 
 .mypy_cache/ 
 
+# VSCODE #
+.vscode/
+
 # Sublime Text # 
 *.tmlanguage.cache 
 *.tmPreferences.cache 
