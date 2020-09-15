@@ -7,8 +7,6 @@ export class Form extends Component {
   state = {
     title: "",
     url: "",
-    summary: "",
-    future_work: "",
   };
 
   static propTypes = {
@@ -19,13 +17,13 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { title, url, summary, future_work } = this.state;
-    const paper = { title, url, summary, future_work };
+    const { title, url } = this.state;
+    const paper = { title, url };
     this.props.addPaper(paper);
   };
 
   render() {
-    const { title, url, summary, future_work } = this.state;
+    const { title, url } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Paper</h2>
@@ -48,26 +46,6 @@ export class Form extends Component {
               name="url"
               onChange={this.onChange}
               value={url}
-            />
-          </div>
-          <div className="form-group">
-            <label>Summary</label>
-            <textarea
-              className="form-control"
-              type="text"
-              name="summary"
-              onChange={this.onChange}
-              value={summary}
-            />
-          </div>
-          <div className="form-group">
-            <label>Future Work</label>
-            <textarea
-              className="form-control"
-              type="text"
-              name="future_work"
-              onChange={this.onChange}
-              value={future_work}
             />
           </div>
           <div className="form-group">

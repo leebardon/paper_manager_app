@@ -22,14 +22,14 @@ export class Papers extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Papers</h2>
+        <h2>Papers To Read</h2>
         <table className="table table-striped">
           <thead>
             <tr>
               <th>Title</th>
               <th>URL</th>
               <th>Summary</th>
-              <th>Future Work</th>
+              <th>Research Ideas</th>
               <th />
             </tr>
           </thead>
@@ -37,9 +37,21 @@ export class Papers extends Component {
             {this.props.papers.map((paper) => (
               <tr key={paper.id}>
                 <td>{paper.title}</td>
-                <td>{paper.url}</td>
-                <td>{paper.summary}</td>
-                <td>{paper.future_work}</td>
+                <td>
+                  <a href={paper.url} target="_blank">
+                    Link to Paper
+                  </a>
+                </td>
+                <td>
+                  <form>
+                    <textarea placeholder="Add your summary..."></textarea>
+                  </form>
+                </td>
+                <td>
+                  <form>
+                    <textarea placeholder='Hint: "future work"...'></textarea>
+                  </form>
+                </td>
                 <td>
                   <button
                     className="btn btn-danger btn-sm"
