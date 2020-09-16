@@ -20,6 +20,10 @@ export class Form extends Component {
     const { title, url } = this.state;
     const paper = { title, url };
     this.props.addPaper(paper);
+    this.setState({
+      title: "",
+      url: "",
+    });
   };
 
   render() {

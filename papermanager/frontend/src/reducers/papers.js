@@ -1,4 +1,4 @@
-import { GET_PAPERS, ADD_PAPER } from "../actions/types.js";
+import { GET_PAPERS, ADD_PAPER, UPDATE_PAPER } from "../actions/types.js";
 
 const initialState = {
   papers: [],
@@ -12,6 +12,11 @@ export default function (state = initialState, action) {
         papers: action.payload,
       };
     case ADD_PAPER:
+      return {
+        ...state,
+        papers: [...state.papers, action.payload],
+      };
+    case UPDATE_PAPER:
       return {
         ...state,
         papers: [...state.papers, action.payload],
